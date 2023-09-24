@@ -17,8 +17,8 @@ const Prompt = ({ onChange }) => {
   };
 
   return (
-    <div className="input-container">
-      <h3>Prompt</h3>
+    <div className="input-container" >
+      <h3 >Prompt</h3>
       <input
         type="text"
         className="input-field"

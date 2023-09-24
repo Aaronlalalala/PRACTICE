@@ -14,7 +14,7 @@ function BatchSize({ value, onChange }) {
 
   const handleInputChange = (e) => {
     let newValue = parseInt(e.target.value, 10);
-    newValue = Math.min(8, Math.max(1, newValue));
+    newValue = Math.min(100, Math.max(0, newValue));
     setSliderValue(newValue);
     setInputValue(newValue);
     onChange(newValue); // 通知父组件值已更改
@@ -25,16 +25,16 @@ function BatchSize({ value, onChange }) {
       <h4>BatchSize</h4>
       <input
         type="range"
-        min="1"
-        max="8"
+        min="0"
+        max="100"
         value={sliderValue}
         className="slider"
         onChange={handleSliderChange}
       />
       <input
         type="number"
-        min="1"
-        max="8"
+        min="0"
+        max="100"
         value={inputValue}
         className="input"
         onChange={handleInputChange}

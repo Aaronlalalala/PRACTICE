@@ -14,7 +14,7 @@ function Seed({ value, onChange }) {
 
   const handleInputChange = (e) => {
     let newValue = parseInt(e.target.value, 10);
-    newValue = Math.min(1000, Math.max(-1, newValue));
+    newValue = Math.min(100, Math.max(0, newValue));
     setSliderValue(newValue);
     setInputValue(newValue);
     onChange(newValue); // 通知父组件值已更改
@@ -25,16 +25,16 @@ function Seed({ value, onChange }) {
       <h4>Seed</h4>
       <input
         type="range"
-        min="-1"
-        max="1000"
+        min="0"
+        max="100"
         value={sliderValue}
         className="slider"
         onChange={handleSliderChange}
       />
       <input
         type="number"
-        min="1"
-        max="1000"
+        min="0"
+        max="100"
         value={inputValue}
         className="input"
         onChange={handleInputChange}

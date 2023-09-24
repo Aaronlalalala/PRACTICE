@@ -14,7 +14,7 @@ function CFGScale({ value, onChange }) {
 
   const handleInputChange = (e) => {
     let newValue = parseInt(e.target.value, 10);
-    newValue = Math.min(30, Math.max(7, newValue));
+    newValue = Math.min(100, Math.max(0, newValue));
     setSliderValue(newValue);
     setInputValue(newValue);
     onChange(newValue); 
@@ -25,16 +25,16 @@ function CFGScale({ value, onChange }) {
       <h4>CFGScale</h4>
       <input
         type="range"
-        min="7"
-        max="30"
+        min="0"
+        max="100"
         value={sliderValue}
         className="slider"
         onChange={handleSliderChange}
       />
       <input
         type="number"
-        min="7"
-        max="30"
+        min="0"
+        max="100"
         value={inputValue}
         className="input"
         onChange={handleInputChange}

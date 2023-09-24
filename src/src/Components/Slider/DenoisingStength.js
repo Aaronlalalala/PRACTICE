@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../style/slider.css";
 
-function ResizeHeight({ value, onChange }) {
+function DenoisingStrength({ value, onChange }) {
   const [sliderValue, setSliderValue] = useState(value);
   const [inputValue, setInputValue] = useState(value);
 
@@ -14,7 +14,7 @@ function ResizeHeight({ value, onChange }) {
 
   const handleInputChange = (e) => {
     let newValue = parseInt(e.target.value, 10);
-    newValue = Math.min(2048, Math.max(0, newValue));
+    newValue = Math.min(100, Math.max(0, newValue));
     setSliderValue(newValue);
     setInputValue(newValue);
     onChange(newValue); // 通知父组件值已更改
@@ -22,11 +22,11 @@ function ResizeHeight({ value, onChange }) {
 
   return (
     <div className="slider-container">
-      <h4>ResizeHeight</h4>
+      <h4>Denoising Strength </h4>
       <input
         type="range"
         min="0"
-        max="2048"
+        max="100"
         value={sliderValue}
         className="slider"
         onChange={handleSliderChange}
@@ -34,7 +34,7 @@ function ResizeHeight({ value, onChange }) {
       <input
         type="number"
         min="0"
-        max="2048"
+        max="100"
         value={inputValue}
         className="input"
         onChange={handleInputChange}
@@ -43,4 +43,4 @@ function ResizeHeight({ value, onChange }) {
   );
 }
 
-export default ResizeHeight;
+export default DenoisingStrength;

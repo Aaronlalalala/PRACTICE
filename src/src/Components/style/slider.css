@@ -4,9 +4,10 @@
     align-items: center;
     justify-content: space-between;
     width: 300px; 
-    margin: 20px auto;
+    margin: 0px auto;
   }
-  
+
+
 
   input[type="range"] {
     width: 70%; 

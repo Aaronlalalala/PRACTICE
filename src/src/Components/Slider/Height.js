@@ -14,7 +14,7 @@ function Height({ value, onChange }) {
 
   const handleInputChange = (e) => {
     let newValue = parseInt(e.target.value, 10);
-    newValue = Math.min(512, Math.max(512, newValue));
+    newValue = Math.min(100, Math.max(0, newValue));
     setSliderValue(newValue);
     setInputValue(newValue);
     onChange(newValue); 
@@ -25,16 +25,16 @@ function Height({ value, onChange }) {
       <h4>Height</h4>
       <input
         type="range"
-        min="512"
-        max="512"
+        min="0"
+        max="100"
         value={sliderValue}
         className="slider"
         onChange={handleSliderChange}
       />
       <input
         type="number"
-        min="512"
-        max="512"
+        min="0"
+        max="100"
         value={inputValue}
         className="input"
         onChange={handleInputChange}

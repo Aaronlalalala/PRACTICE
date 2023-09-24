@@ -8,7 +8,7 @@ function IntergrateCLIP() {
   };
   
   return (
-    <button className="custom-button" onClick={handleClick}>
+    <button className="custom-button" onClick={handleClick} style={{    height:140 , width:300}}>
       IntergrateCLIP
     </button>
   );

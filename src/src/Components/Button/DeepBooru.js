@@ -8,7 +8,7 @@ function DeepBooru() {
   };
   
   return (
-    <button className="custom-button" onClick={handleClick}>
+    <button className="custom-button" onClick={handleClick} style={{    height:140 , width:300}}>
      Intergrate DeepBooru
     </button>
   );
