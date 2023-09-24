@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import "../style/prompt.css";
 
-const Prompt = () => {
+const Prompt = ({ onChange }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+    const value = e.target.value;
+    setInputValue(value);
+    onChange(value); // 在值更改時調用傳遞的onChange函數，并傳遞到父組件
   };
 
   const handleEnterKeyPress = (e) => {
     if (e.key === 'Enter') {
-      console.log('輸入：', inputValue);
-      setInputValue((prevValue) => {
-        console.log('保留文字：', prevValue);
-        return prevValue;
-      });
+      onChange(inputValue); // 在按下Enter键时調用傳遞的onChange函数
     }
   };
 

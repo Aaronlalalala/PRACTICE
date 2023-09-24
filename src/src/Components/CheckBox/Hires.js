@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
-import "../style/CheckBox.css"
+import "../style/CheckBox.css";
 
-function Hires() {
+function Hires({ onChange }) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+    const newCheckedValue = !isChecked;
+    setIsChecked(newCheckedValue);
+    onChange(newCheckedValue); // 通知父組件選相框已被勾選
   };
 
   return (
     <div className="checkbox-container">
-      <h3>Hires.fix</h3>
       <div
         className={`checkbox-icon ${isChecked ? 'checked' : ''}`}
         onClick={handleCheckboxChange}
       >
         {isChecked && <span>&#10003;</span>}
       </div>
-      <label className="checkbox-label">Restore faces</label>
+      <label className="checkbox-label">Hires.fix</label>
     </div>
   );
 }

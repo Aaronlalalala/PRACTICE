@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Mainstyle from "./MainPage.module.css";
 
@@ -26,9 +26,10 @@ function MainPage(){
             </span>
         </div>   
 <div>{/*---------------------------------------------------------------------------------------------------------------------------*/}</div>
+        
         <div className={Mainstyle.login} >
         <span>
-            <NavLink to='/TXTtoIMG'>
+            <NavLink to="/TXTtoIMG">
                 <button>Go to TXT to IMG</button>
             </NavLink>
         </span>

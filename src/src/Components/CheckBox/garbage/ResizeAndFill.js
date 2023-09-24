@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../style/CheckBox.css"
 
-function JustResize() {
+function ResizeAndFill() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -10,16 +10,15 @@ function JustResize() {
 
   return (
     <div className="checkbox-container">
-      <h3>Just resize</h3>
       <div
         className={`checkbox-icon ${isChecked ? 'checked' : ''}`}
         onClick={handleCheckboxChange}
       >
         {isChecked && <span>&#10003;</span>}
       </div>
-      <label className="checkbox-label">Restore faces</label>
+      <label className="checkbox-label">Resize and fill</label>
     </div>
   );
 }
 
-export default JustResize;
+export default ResizeAndFill;

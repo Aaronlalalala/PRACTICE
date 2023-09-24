@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../style/Button.css";
 
 function Dice() {
-  const handleClick = () => { /* 看要按鈕回傳甚麼 */
-    // 我是看到圖片有一個骰子的按鈕 所以我想說做一個骰子按鈕
-    
+  const [randomNumber, setRandomNumber] = useState(null);
+
+  const handleClick = () => {
+    // 產生一個1到6之間的隨機數字
+    const min = 1;
+    const max = 6;
+    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    // 更新狀態以顯示隨機數字
+    setRandomNumber(randomNum);
   };
 
   return (
-    <button className="custom-button" onClick={handleClick}>
-      Dice
-    </button>
+    <div>
+      <button className="custom-button" onClick={handleClick}>
+        Roll Dice
+      </button>
+      {randomNumber !== null && (
+        <p>隨機數字: {randomNumber}</p>
+      )}
+    </div>
   );
 }
 

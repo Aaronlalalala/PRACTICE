@@ -1,30 +1,28 @@
 import React, { useState } from 'react';
 import "../style/prompt.css";
 
-const NegativePrompt = () => {
+const NegativePrompt = ({ onChange }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+    const value = e.target.value;
+    setInputValue(value);
+    onChange(value); // 在值更改时调用传递的onChange函数，并将输入值传递给父组件
   };
 
   const handleEnterKeyPress = (e) => {
     if (e.key === 'Enter') {
-      console.log('輸入：', inputValue);
-      setInputValue((prevValue) => {
-        console.log('保留文字：', prevValue);
-        return prevValue;
-      });
+      onChange(inputValue); // 在按下Enter键时调用传递的onChange函数，并将输入值传递给父组件
     }
   };
 
   return (
     <div className="input-container">
-      <h3>NegativePrompt</h3>
+      <h3>Negative Prompt</h3>
       <input
         type="text"
         className="input-field"
-        placeholder="请输入"
+        placeholder="請輸入"
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleEnterKeyPress}
@@ -34,6 +32,7 @@ const NegativePrompt = () => {
 };
 
 export default NegativePrompt;
+
 
 
 

@@ -26,7 +26,7 @@ function App() {
           <Route path="/Bin" element={<Bin/>}></Route>
           <Route path="/Download" element={<Download/>}></Route>
           <Route path="/Viewupload" element={<Viewupload/>}></Route>
-          <Route path='/TXTtoIMG' element={<TXTtoIMG/>}></Route>
+          <Route path="/TXTtoIMG" element={<TXTtoIMG/>}></Route>
           <Route path="/IMGtoIMG" element={<IMGtoIMG/>}></Route>
         </Routes>
       </Router>

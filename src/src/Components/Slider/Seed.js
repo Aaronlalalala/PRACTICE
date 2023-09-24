@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../style/slider.css";
 
-function CFGScale({ value, onChange }) {
+function Seed({ value, onChange }) {
   const [sliderValue, setSliderValue] = useState(value);
   const [inputValue, setInputValue] = useState(value);
 
@@ -9,32 +9,32 @@ function CFGScale({ value, onChange }) {
     const newValue = parseInt(e.target.value, 10);
     setSliderValue(newValue);
     setInputValue(newValue);
-    onChange(newValue); 
+    onChange(newValue); // 通知父組件TXTPage 數值以更改
   };
 
   const handleInputChange = (e) => {
     let newValue = parseInt(e.target.value, 10);
-    newValue = Math.min(30, Math.max(7, newValue));
+    newValue = Math.min(1000, Math.max(-1, newValue));
     setSliderValue(newValue);
     setInputValue(newValue);
-    onChange(newValue); 
+    onChange(newValue); // 通知父组件值已更改
   };
 
   return (
     <div className="slider-container">
-      <h4>CFGScale</h4>
+      <h4>Seed</h4>
       <input
         type="range"
-        min="7"
-        max="30"
+        min="-1"
+        max="1000"
         value={sliderValue}
         className="slider"
         onChange={handleSliderChange}
       />
       <input
         type="number"
-        min="7"
-        max="30"
+        min="1"
+        max="1000"
         value={inputValue}
         className="input"
         onChange={handleInputChange}
@@ -43,4 +43,4 @@ function CFGScale({ value, onChange }) {
   );
 }
 
-export default CFGScale;
+export default Seed;

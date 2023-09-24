@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import "../style/CheckBox.css";
+import "../style/CheckBox.css"
 
-function RestoreFaces({ onChange }) {
+function LatentUpscale() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
-    const newCheckedValue = !isChecked;
-    setIsChecked(newCheckedValue);
-    onChange(newCheckedValue); // 通知父組件選相框已被勾選
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -18,9 +16,9 @@ function RestoreFaces({ onChange }) {
       >
         {isChecked && <span>&#10003;</span>}
       </div>
-      <label className="checkbox-label">Restore faces</label>
+      <label className="checkbox-label">Jusr resize (latent upscale)</label>
     </div>
   );
 }
 
-export default RestoreFaces;
+export default LatentUpscale;

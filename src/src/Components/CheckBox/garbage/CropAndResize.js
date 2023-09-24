@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../style/CheckBox.css"
 
-function LatentUpscale() {
+function CropAndResize() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -10,16 +10,15 @@ function LatentUpscale() {
 
   return (
     <div className="checkbox-container">
-      <h3>Jusr resize (latent upscale)</h3>
       <div
         className={`checkbox-icon ${isChecked ? 'checked' : ''}`}
         onClick={handleCheckboxChange}
       >
         {isChecked && <span>&#10003;</span>}
       </div>
-      <label className="checkbox-label">Restore faces</label>
+      <label className="checkbox-label">Crop and resize</label>
     </div>
   );
 }
 
-export default LatentUpscale;
+export default CropAndResize;
