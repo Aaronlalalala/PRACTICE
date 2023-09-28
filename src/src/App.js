@@ -18,16 +18,16 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<FrontPage/>}></Route>
-          <Route path="/MainPage" element={<MainPage/>}></Route>
-          <Route path="/login" element={<Login setUserState={setUserState} />}></Route>
-          <Route path="/signup" element={<Register />}></Route> 
-          <Route path="/Upload" element={<Upload/>}></Route>
-          <Route path="/Bin" element={<Bin/>}></Route>
-          <Route path="/Download" element={<Download/>}></Route>
+          <Route path="/"           element={<FrontPage/>}></Route>
+          <Route path="/MainPage"   element={<MainPage/>}></Route>
+          <Route path="/login"      element={<Login setUserState={setUserState} />}></Route>
+          <Route path="/signup"     element={<Register />}></Route> 
+          <Route path="/Upload"     element={<Upload/>}></Route>
+          <Route path="/Bin"        element={<Bin/>}></Route>
+          <Route path="/Download"   element={<Download/>}></Route>
           <Route path="/Viewupload" element={<Viewupload/>}></Route>
-          <Route path="/TXTtoIMG" element={<TXTtoIMG/>}></Route>
-          <Route path="/IMGtoIMG" element={<IMGtoIMG/>}></Route>
+          <Route path="/TXTtoIMG"   element={<TXTtoIMG/>}></Route>
+          <Route path="/IMGtoIMG"   element={<IMGtoIMG/>}></Route>
         </Routes>
       </Router>
     </div>
